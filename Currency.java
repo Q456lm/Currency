@@ -13,12 +13,11 @@ public class Currency{
         newcash = cash%0.25;
 
         final int DIME_AMOUNT = (int)(newcash/0.10);//dimes
-        newcash = cash%0.10;
+        newcash = newcash%0.10;
 
         final int NICKEL_AMOUNT = (int)(newcash/0.05);//nickles
-        newcash = cash%0.05;
+        newcash = newcash%0.05;
 
-        newcash = Math.ceil(newcash*100)/100; //pennies //Requred becaue of rounding error to make that makes it not do pennies correctly.
         final int PENNY_AMOUNT = (int)(newcash/0.01);
 
         return "dollars: "+DOLLAR_AMOUNT+"\nquaters: "+QUATER_AMOUNT+"\ndimes: "+DIME_AMOUNT+"\nnickes: "+NICKEL_AMOUNT+"\npennies: "+PENNY_AMOUNT;
